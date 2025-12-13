@@ -1,0 +1,6 @@
+CREATE FUNCTION dbo.fn_GetLastName (@FullName NVARCHAR(100))
+RETURNS NVARCHAR(50)
+AS
+BEGIN
+    RETURN SUBSTRING(@FullName, CHARINDEX(' ', @FullName) + 1, LEN(@FullName));
+END;

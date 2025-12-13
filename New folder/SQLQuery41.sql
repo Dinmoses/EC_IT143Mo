@@ -1,0 +1,6 @@
+CREATE FUNCTION dbo.fn_GetFirstName (@FullName NVARCHAR(100))
+RETURNS NVARCHAR(50)
+AS
+BEGIN
+    RETURN LEFT(@FullName, CHARINDEX(' ', @FullName) - 1);
+END;
